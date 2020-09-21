@@ -10,19 +10,34 @@ def is_even_len(string: str) -> bool:
 
 
 def remove_third_char(string: str) -> str:
-    del
+    a = string.replace(string[2], '')
+    return a
 
 
 def replace_char(string: str, old_char: str, new_char: str) -> str:
-    pass
+        for i in range(len(string)):
+        if string[i] == old_char:
+            string = string[:i] + new_char + string[i + 1:]
+            return string
 
 
 def get_number_of_char(string: str, char: str) -> int:
-    pass
+    list = []
+    i = 0
+    for g in string:
+        if g == char:
+            list += '1'
+    i = i + 1
+    return len(list)
 
 
 def get_number_of_words(sentence: str, word: str) -> int:
-    pass
+    count = 0
+    words = sentence.split()
+    for current in words:
+        if current == word:
+            count+=1
+    return count
 
 
 def main() -> None:
